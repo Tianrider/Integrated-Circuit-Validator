@@ -1,6 +1,9 @@
 #define __SFR_OFFSET 0x00
 #include "avr/io.h"
 
+;=================================================================
+; String Data
+;=================================================================
 .section .progmem
 malf_msg: 
     .ascii "IC IS MALFUNCTION!"
@@ -10,11 +13,11 @@ correct_msg:
     .ascii "IC IS WORKING PROPERLY!"
     .byte 10,13,0
 
+;=================================================================
 .section .text
 .global init_serial
 .global print_malf_serial
 .global print_normal_serial
-
 init_serial: 
     STS   UCSR0A, R24     ;clear UCSR0A register
     STS   UBRR0H, R24     ;clear UBRR0H register

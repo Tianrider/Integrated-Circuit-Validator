@@ -4,6 +4,7 @@
 .section .text
 .global delay_20ms
 .global delay_1s
+
 delay_20ms:             ;delay 20ms
     LDI   R21, 255
 l3: LDI   R22, 210
